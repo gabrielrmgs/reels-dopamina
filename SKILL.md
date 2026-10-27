@@ -1,6 +1,6 @@
 ---
 name: reels-dopamina
-description: Cria Reels/Shorts/TikTok verticais (1080x1920) de alta retenção para vender um app, SaaS ou produto — do roteiro persuasivo ao MP4 renderizado. Primeiro entrega o ROTEIRO (hook visual + sonoro + falado, dor, virada, solução com telas reais, CTA) para aprovação; só depois gera narração (ElevenLabs, opcional), trilha, efeitos e anima tudo em HTML + GSAP com HyperFrames, com efeitos dopaminérgicos fluidos (barra de progresso, zoom punch, confete, contadores, transições contínuas). Use SEMPRE que a pessoa pedir "faz um reel", "vídeo pro Instagram/TikTok", "vídeo explicativo do app", "anúncio em vídeo", "vídeo tocando na dor do cliente", "hook que prenda nos 3 primeiros segundos", "vídeo estilo app explainer", ou quiser transformar uma dor/funcionalidade do produto em vídeo curto vertical — mesmo sem citar a skill. Não use para editar vídeo gravado com pessoas (talking head), thumbnails ou carrosséis estáticos.
+description: Cria Reels/Shorts/TikTok verticais (1080x1920) de alta retenção para vender um app, SaaS ou produto — do roteiro persuasivo ao MP4 renderizado. Primeiro entrega o ROTEIRO (hook visual + sonoro + falado, dor, virada, solução com telas reais, CTA) para aprovação; só depois gera narração (ElevenLabs, opcional), trilha, efeitos e anima tudo em HTML + GSAP com HyperFrames, com efeitos dopaminérgicos fluidos (barra de progresso, zoom punch, confete, contadores, transições contínuas). Use SEMPRE que o vídeo curto for para vender ou explicar um app, SaaS ou produto, em pedidos como "faz um reel do meu app", "vídeo pro Instagram/TikTok do produto", "vídeo explicativo do app", "anúncio em vídeo", "vídeo tocando na dor do cliente", "hook que prenda nos 3 primeiros segundos", "vídeo estilo app explainer", ou quiser transformar uma dor/funcionalidade do produto em vídeo curto vertical — mesmo sem citar a skill. Não use para reel de conteúdo sem produto a vender (dica, lista, aula), para editar vídeo gravado com pessoas (talking head), thumbnails ou carrosséis estáticos.
 ---
 
 # Reels dopaminérgicos para apps
@@ -77,7 +77,8 @@ Pare e espere aprovação. Ajustes no roteiro são baratos; aplique e reapresent
 ## Fase 2 — Produção (só depois do "pode produzir")
 
 Crie a pasta do projeto (ex.: `marketing/videos/<slug>/` com `assets/`), copie
-`templates/base.html` para `<slug>/index.html` e `templates/fx.js` para `<slug>/fx.js`.
+`templates/base.html` para `<slug>/index.html` e `templates/fx.js` para `<slug>/fx.js`, e crie
+`<slug>/meta.json` com `{"id":"<slug>","name":"<nome>"}`.
 
 ### 5. Assets
 Leia `references/audio.md` e `references/elevenlabs.md` antes de gerar qualquer coisa.
@@ -93,10 +94,10 @@ ou espere a pessoa liberar créditos — não troque de voz/provedor sem pergunt
 
 ### 6. Validar a voz
 Rode `python scripts/transcribe_check.py <voz.mp3>` (usa o skill `watch` local se existir, senão
-Whisper) e compare com o texto. Escolha o take sem erros de palavra; se só um trecho errar (ex.:
-"Palha agora" em vez de "Pare agora"), regere só esse trecho e emende com
-`scripts/splice_phrase.py`. Se precisar trocar uma palavra mantendo o encaixe com um vídeo já
-pronto, regere o take inteiro e use `scripts/align_phrases.py`.
+Whisper) e compare com o texto. Escolha o take sem erros de palavra; se só o começo errar (ex.: o
+hook saiu "Palha agora" em vez de "Pare agora"), regere só esse trecho e emende com
+`scripts/splice_phrase.py` (ele só troca o começo). Erro no meio da narração: regere o take
+inteiro; se o vídeo já estiver pronto, use `scripts/align_phrases.py` para manter o encaixe.
 
 ### 7. Mapa de tempos
 - `python scripts/timing_map.py voz.mp3` → lista de frases com início/fim (silêncios).

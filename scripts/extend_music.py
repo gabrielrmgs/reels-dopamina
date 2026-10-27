@@ -22,7 +22,8 @@ p.add_argument("--bpm", type=float, default=120)
 a = p.parse_args()
 
 bar = 240.0 / a.bpm
-back = a.cut - a.bars * bar
+# B começa 0,5 s (o d= do acrossfade) antes, para a mistura cair no mesmo ponto do compasso.
+back = a.cut - a.bars * bar - 0.5
 if back <= 0:
     sys.exit("cut muito cedo para essa quantidade de compassos")
 fc = (f"[0:a]atrim=0:{a.cut},asetpts=PTS-STARTPTS[a];"
