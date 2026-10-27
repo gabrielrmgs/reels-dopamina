@@ -20,7 +20,7 @@ silêncio na frente (`scripts/transcribe_check.py` já faz isso). Diferenças co
 "vende mais" ou "Onyx" × "Onix" costumam ser do reconhecimento — mas "Palha agora" × "Pare agora"
 no hook foi erro real da voz e precisou regravar o trecho.
 
-**Regravar só um trecho** (ex.: o hook): gere apenas a frase, corte com `atrim`, e emende com
+**Regravar só o começo** (ex.: o hook): gere apenas a frase, corte com `atrim`, e emende com
 `scripts/splice_phrase.py` deixando ~0,4 s de pausa natural antes da frase seguinte.
 
 **Trocar uma palavra mantendo o vídeo pronto** (ex.: pronúncia da marca): regere o take inteiro com
