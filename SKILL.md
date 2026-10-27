@@ -11,7 +11,7 @@ aprovação humana, porque gerar voz, trilha e imagens custa créditos e tempo �
 descobrir só no render é o desperdício mais caro do processo.
 
 ```
-Fase 1 (barata)  briefing → checar a verdade no produto → ROTEIRO → aprovação
+Fase 1 (barata)  versões → briefing → checar a verdade no produto → ROTEIRO → aprovação
 Fase 2 (cara)    assets → mapa de tempos → composição → revisão visual → render → verificação
 ```
 
@@ -25,12 +25,17 @@ exemplo completo.
 
 ## Fase 1 — Roteiro
 
+### 0. Quais versões (pergunte antes de tudo)
+Antes do briefing e antes de qualquer roteiro, pergunte quais versões a pessoa quer, a menos que o
+pedido já diga: **só a principal (35–45 s)**, **só a curta (~20 s)** ou **as duas**. Use
+AskUserQuestion quando disponível. Produza só o que for escolhido — nunca gere a versão curta (nem
+a principal) por conta própria.
+
 ### 1. Briefing curto
 Pergunte só o que faltar: produto/marca, público (quem decide a compra), a dor (ou "escolhe você"),
 objetivo (orgânico ou anúncio; público frio, morno ou quente), provas reais disponíveis (depoimentos,
 nº de clientes, notas), principal objeção, voz (feminina/masculina, ou sem narração) e formato
-(Reels 9:16 é o padrão). Duração: versão principal de 35–45 s; para anúncio, também uma versão curta
-de ~20 s. Se a pessoa disser "você decide", decida e explique a escolha em uma linha.
+(Reels 9:16 é o padrão). Se a pessoa disser "você decide", decida e explique a escolha em uma linha.
 
 ### 2. Escolher a dor
 Uma dor por vídeo. Prefira a dor que (a) o público sente no bolso ou no orgulho, (b) dá para mostrar
@@ -59,7 +64,7 @@ Entregue SEMPRE neste formato, em texto no chat:
 **Para quem:** <decisor> · **Objetivo:** <orgânico | anúncio frio/morno/quente> · **Consciência:** <nível>
 **Mecanismo:** problema <causa que tira a culpa> → solução <por que o produto resolve>
 **Prova:** <prova real com fonte, ou "sem prova social disponível">
-**Voz:** <nome da voz> · **Duração:** ~XX s (+ versão curta ~20 s se for anúncio)
+**Voz:** <nome da voz> · **Versões:** <principal ~XX s | curta ~20 s | as duas — conforme o passo 0>
 
 ### Hooks para testar (0–3 s, mesmo corpo)
 | # | Tipo | Visual (quadro 0) | Som | Fala |
@@ -136,7 +141,7 @@ com a energia subindo até a virada; picos grandes só na virada, no resultado/p
 seco no tempo da música dentro do ato e transição fluida na troca de ato; barra de progresso no topo;
 texto que carrega o argumento sem som; tudo que importa entre y 270 e y 1250 (áreas seguras de
 anúncio: ~270 px do topo, ~670 px da base, ~65 px das laterais). Hooks alternativos trocam só a
-primeira cena (`<slug>-g1`, `-g2`…). A versão curta reaproveita as cenas de gancho, virada, uma
+primeira cena (`<slug>-g1`, `-g2`…). Se as duas versões foram pedidas, a curta reaproveita as cenas de gancho, virada, uma
 tela e CTA.
 
 ### 9. Revisão visual
@@ -152,7 +157,7 @@ médio (~-18 a -20 dB) e transcreve. Se o hook não aparecer na transcrição, o
 mascarando a voz — baixe o efeito (veja `references/audio.md`).
 
 ### 11. Entrega
-Envie os MP4 (principal, variantes de hook e versão curta) e diga em prosa: o hook, o que cada cena
+Envie os MP4 (as versões pedidas no passo 0 e as variantes de hook) e diga em prosa: o hook, o que cada cena
 faz, os efeitos usados, e os pontos de atenção honestos (pronúncia que a transcrição ouviu
 diferente, números ilustrativos, créditos gastos, o que não foi verificado de ouvido).
 Se for anúncio, inclua como ler o teste (referências de mercado; compare com a média da conta):

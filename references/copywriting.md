@@ -34,8 +34,8 @@ desses passos; se um ato não empurra o espectador para o próximo, corte.
 | 8. CTA | 35–42 s | Decisão | Como fica a vida depois + oferta + redução real de risco/esforço + destino |
 
 **Duração:** o critério é a curva de retenção, não um número fixo. A versão principal fica em
-35–45 s (teto ~48 s). Para anúncio, gere também uma **versão curta (~20 s)** como teste extra, não
-como substituta: gancho (0–3 s) → golpe em uma frase (3–6 s) → virada + uma tela (6–15 s) → CTA
+35–45 s (teto ~48 s). A **versão curta (~20 s)** só é feita se a pessoa escolher (passo 0 do
+`SKILL.md`); ela segue: gancho (0–3 s) → golpe em uma frase (3–6 s) → virada + uma tela (6–15 s) → CTA
 (15–20 s).
 
 O vídeo inteiro tem **uma** dor. Duas dores dividem a atenção e nenhuma dói o suficiente.
