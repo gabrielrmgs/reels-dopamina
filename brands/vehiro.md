@@ -21,6 +21,7 @@
 
 ## Público
 - **Decide a compra:** dono de loja/revenda de veículos seminovos (pequena e média).
+- **Inimigo comum:** planilha, caderno, avaliação "no olho", fotos espalhadas no WhatsApp.
 - **Jargão:** pátio, troca, FIPE, avaliação, repasse, consignado, comissão de intermediário,
   vendedor, preparação, funilaria, documentação.
 - **Dores (✓ = já tem vídeo):**

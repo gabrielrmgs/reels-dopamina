@@ -3,9 +3,15 @@
 Cinco reels produzidos e aprovados para o VEHIRO (gestão de loja de veículos). Use para calibrar
 tom, ritmo e formato; não copie as dores para outra marca.
 
+> Estes roteiros são anteriores às regras atuais de `references/copywriting.md`. Ao reaproveitar:
+> falas que afirmam a perda de quem assiste ("Você acabou de pagar…", "Seu lucro real foi a
+> metade", "Seu cliente acabou de comprar…") viram cena ou fato em 3ª pessoa (veja
+> `references/hooks-catalog.md`); números ilustrativos levam "exemplo" na tela; falta um ato de
+> prova antes do CTA; e o hook entra com um segundo de "Pare!" que hoje é só variante.
+
 ---
 
-## 1. Explainer geral (37 s, voz feminina, sem hook agressivo)
+## 1. Explainer geral (37 s, voz feminina, sem hook agressivo — para público quente)
 Estilo "app explainer" (referência: vídeo da Groundswell/Vidico): celular inclinado com telas
 reais, cards saltando da tela, formas grandes da marca como transição, tipografia cinética.
 **Narração:** "Faça do Verriro o braço direito da sua loja de veículos, e controle tudo na palma da

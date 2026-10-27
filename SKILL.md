@@ -27,13 +27,17 @@ exemplo completo.
 
 ### 1. Briefing curto
 Pergunte só o que faltar: produto/marca, público (quem decide a compra), a dor (ou "escolhe você"),
-voz (feminina/masculina, ou sem narração), duração alvo (30–50 s), formato (Reels 9:16 é o padrão).
-Se a pessoa disser "você decide", decida e explique a escolha em uma linha.
+objetivo (orgânico ou anúncio; público frio, morno ou quente), provas reais disponíveis (depoimentos,
+nº de clientes, notas), principal objeção, voz (feminina/masculina, ou sem narração) e formato
+(Reels 9:16 é o padrão). Duração: versão principal de 35–45 s; para anúncio, também uma versão curta
+de ~20 s. Se a pessoa disser "você decide", decida e explique a escolha em uma linha.
 
 ### 2. Escolher a dor
 Uma dor por vídeo. Prefira a dor que (a) o público sente no bolso ou no orgulho, (b) dá para mostrar
-visualmente, (c) o produto resolve de verdade com uma tela que existe. Evite repetir dores de vídeos
-anteriores da mesma série — liste as já feitas antes de escolher.
+visualmente, (c) o produto resolve de verdade com uma tela que existe, (d) acontece com frequência
+(toda semana dói mais que uma vez por ano). Evite repetir dores de vídeos anteriores da mesma série —
+liste as já feitas antes de escolher. Defina também o nível de consciência do público e o mecanismo
+(do problema e da solução) — veja `references/copywriting.md`.
 
 ### 3. Checar a verdade no produto
 Para cada promessa do roteiro, confirme no código, nas telas ou no site que a funcionalidade existe
@@ -52,24 +56,39 @@ Entregue SEMPRE neste formato, em texto no chat:
 ```markdown
 ## Reels N — "<nome da dor>"
 **Dor:** <uma frase>. **O que o produto tem de verdade:** <bullets com onde conferiu>.
-**Voz:** <nome da voz> · **Duração:** ~XX s
+**Para quem:** <decisor> · **Objetivo:** <orgânico | anúncio frio/morno/quente> · **Consciência:** <nível>
+**Mecanismo:** problema <causa que tira a culpa> → solução <por que o produto resolve>
+**Prova:** <prova real com fonte, ou "sem prova social disponível">
+**Voz:** <nome da voz> · **Duração:** ~XX s (+ versão curta ~20 s se for anúncio)
 
-### Hook (0–3 s)
-- **Visual:** ...   - **Som:** ...   - **Fala:** "..."
-- Por que prende: ...
+### Hooks para testar (0–3 s, mesmo corpo)
+| # | Tipo | Visual (quadro 0) | Som | Fala |
+|---|---|---|---|---|
+| 1 | ... | ... | ... | "..." |
+| 2 | ... | ... | ... | "..." |
+| 3 | ... | ... | ... | "..." |
+Hook principal: <#> — por que prende: ...
 
 ### Roteiro
-| Tempo | Fala | Visual e efeitos |
-|---|---|---|
-| 0–3 s · Hook | ... | ... |
-| ... · Agitação | ... | ... |
-| ... · Golpe | ... | ... |
-| ... · Virada | ... | ... |
-| ... · Solução | ... | ... |
-| ... · CTA | ... | ... |
+| Tempo | Fala | Texto na tela (mudo) | Visual e efeitos | Passo no cérebro |
+|---|---|---|---|---|
+| 0–3 s · Hook | ... | ... | ... | orientação + "é comigo" |
+| ... · Agitação | ... | ... | ... | tensão crescente |
+| ... · Golpe | ... | ... | ... | aversão à perda |
+| ... · Virada | ... | ... | ... | alívio (pico) |
+| ... · Solução | ... | ... | ... | crença |
+| ... · Prova | ... | ... | ... | prova social |
+| ... · Fechamento + CTA | ... | ... | ... | decisão |
+
+### Copy do anúncio (só se for anúncio)
+- Texto principal (o gancho nos primeiros ~125 caracteres): ...
+- Título (até 40): ... · Botão: ... · Destino: <página com a mesma dor>
+
+### Teste
+- Hipótese: ... · Métrica: hook rate / hold rate / CTR · Critério de corte: ...
 
 ### Para você decidir
-- <só decisões reais: voz, hook alternativo, promessa que precisa ser suavizada>
+- <só decisões reais: voz, hook principal, promessa que precisa ser suavizada, prova que falta>
 ```
 
 Pare e espere aprovação. Ajustes no roteiro são baratos; aplique e reapresente só o que mudou.
@@ -83,7 +102,8 @@ Crie a pasta do projeto (ex.: `marketing/videos/<slug>/` com `assets/`), copie
 ### 5. Assets
 Leia `references/audio.md` e `references/elevenlabs.md` antes de gerar qualquer coisa.
 - **Narração:** 2 takes no ElevenLabs (`eleven_v4`, tags como `[urgent]`, `[short pause]`),
-  com o nome da marca escrito como se pronuncia (ex.: VEHIRO → "Verriro").
+  com o nome da marca escrito como se pronuncia (ex.: VEHIRO → "Verriro"). Hooks alternativos:
+  gere só a frase de cada hook e emende no corpo com `scripts/splice_phrase.py`.
 - **Trilha:** instrumental com tensão até a virada e drop animado depois.
 - **Efeitos do hook:** sirene, buzina de game show, caixa registradora etc. (curtos, ~1 s).
 - **Imagens realistas** (opcional): "foto de celular do vendedor" — veja `references/elevenlabs.md`
@@ -111,9 +131,13 @@ Cada animação de fala entra no tempo da frase: `tempo_video = tempo_voz + V`.
 
 ### 8. Composição
 Monte as cenas no `index.html` seguindo `references/dopamine-fx.md` e `references/hyperframes.md`.
-Regras que mais importam: cenas se sobrepõem 0,2–0,5 s com transição em movimento; uma "recompensa"
-visual a cada ~2 s; barra de progresso no topo; textos importantes fora das faixas cobertas pela UI
-do Reels (topo ~220 px e base ~380 px).
+Regras que mais importam: quadro 0 já legível; algo novo a cada ~2 s, variando tipo e intensidade,
+com a energia subindo até a virada; picos grandes só na virada, no resultado/prova e no CTA; corte
+seco no tempo da música dentro do ato e transição fluida na troca de ato; barra de progresso no topo;
+texto que carrega o argumento sem som; tudo que importa entre y 270 e y 1250 (áreas seguras de
+anúncio: ~270 px do topo, ~670 px da base, ~65 px das laterais). Hooks alternativos trocam só a
+primeira cena (`<slug>-g1`, `-g2`…). A versão curta reaproveita as cenas de gancho, virada, uma
+tela e CTA.
 
 ### 9. Revisão visual
 `npx hyperframes lint .` (0 erros) e
@@ -128,12 +152,16 @@ médio (~-18 a -20 dB) e transcreve. Se o hook não aparecer na transcrição, o
 mascarando a voz — baixe o efeito (veja `references/audio.md`).
 
 ### 11. Entrega
-Envie o MP4 e diga em prosa: o hook, o que cada cena faz, os efeitos usados, e os pontos de atenção
-honestos (pronúncia que a transcrição ouviu diferente, números ilustrativos, créditos gastos, o que
-não foi verificado de ouvido).
+Envie os MP4 (principal, variantes de hook e versão curta) e diga em prosa: o hook, o que cada cena
+faz, os efeitos usados, e os pontos de atenção honestos (pronúncia que a transcrição ouviu
+diferente, números ilustrativos, créditos gastos, o que não foi verificado de ouvido).
+Se for anúncio, inclua como ler o teste (referências de mercado; compare com a média da conta):
+hook rate = views de 3 s ÷ impressões (~30%+ é bom) → baixo: troque o hook, mantenha o corpo;
+hold rate = views de 15 s ÷ views de 3 s (25%+ é forte) → baixo: o corpo não cumpre o hook;
+CTR baixo com retenção boa → prova, oferta ou CTA.
 
 ## Referências
-- `references/copywriting.md` — estrutura em 7 atos, regras de copy, gatilhos.
+- `references/copywriting.md` — caminho da compra em 8 atos, consciência, mecanismo, regras, gatilhos.
 - `references/hooks-catalog.md` — hooks validados (visual + som + fala) e quando usar cada um.
 - `references/dopamine-fx.md` — catálogo de efeitos, ritmo e transições fluidas.
 - `references/audio.md` — voz, pronúncia, mixagem, drop, emendas.

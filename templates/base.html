@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" />
     <style>
       /* Esqueleto de Reels 1080x1920. Troque os tokens pelos do perfil de marca (brands/<marca>.md).
-         Cada <section class="scene clip"> é uma cena; elas podem se sobrepor para transições fluidas. */
+         Cada <section class="scene clip"> é uma cena; elas podem se sobrepor para transições fluidas.
+         Áreas seguras de anúncio: texto, números, logo e CTA entre y 270 e y 1250, x 65 a 1015. */
       :root {
         --primary: #2563eb; --navy: #0b1b4d; --navy-2: #0f2a6b; --cream: #f4f6fa; --ink: #0f172a;
         --muted: #64748b; --border: #e2e8f0; --emerald: #059669; --mint: #34d399; --rose: #f43f5e;
@@ -22,7 +23,7 @@
       .blob { position: absolute; border-radius: 50%; }
 
       /* Texto cinético (fx.splitWords + fx.words) */
-      .kt { position: absolute; left: 60px; right: 60px; font-family: var(--font-display); font-weight: 800; font-size: 100px; line-height: 1.04; letter-spacing: -0.025em; text-align: center; color: var(--ink); }
+      .kt { position: absolute; left: 70px; right: 70px; font-family: var(--font-display); font-weight: 800; font-size: 100px; line-height: 1.04; letter-spacing: -0.025em; text-align: center; color: var(--ink); }
       .kt .w { display: inline-block; white-space: nowrap; }
       .kt .hl { color: var(--primary); }
       .kt .bad { color: var(--rose); }
@@ -63,9 +64,9 @@
       <!-- Solução: celular com tela real + card que salta -->
       <section id="s2" class="scene clip" data-start="3.8" data-duration="4.6" style="background:var(--cream)">
         <div class="blob" id="s2-blob" style="width:1600px;height:1600px;left:300px;top:1050px;background:var(--primary)"></div>
-        <div class="kt" id="s2-kt" data-text="Benefício *em* *poucas* palavras" style="top:220px;font-size:96px"></div>
+        <div class="kt" id="s2-kt" data-text="Benefício *em* *poucas* palavras" style="top:290px;font-size:96px"></div>
         <div class="phone" id="s2-phone" style="left:240px;top:560px"><div class="island"></div><div class="screen"><!-- <img src="assets/tela.png" /> --></div></div>
-        <div class="pop" id="s2-pop" style="left:60px;top:1250px;width:520px"><div class="meta">RESULTADO</div><div class="big" id="s2-val" style="color:var(--emerald)">R$ 0</div><div class="check" style="right:-22px;top:-26px"></div></div>
+        <div class="pop" id="s2-pop" style="left:70px;top:1060px;width:520px"><div class="meta">RESULTADO</div><div class="big" id="s2-val" style="color:var(--emerald)">R$ 0</div><div class="check" style="right:-22px;top:-26px"></div></div>
         <div id="s2-conf"></div>
       </section>
 
@@ -95,9 +96,9 @@
       fx.progress(TOTAL);
       tl.set(["#s2", "#se"], { opacity: 0 }, 0);
 
-      /* Hook */
-      fx.rays("s1-rays", 0.1, 16, 3.5, 40);
-      tl.fromTo("#s1-kt .w", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out", stagger: 0.15 }, 0.3);
+      /* Hook: o quadro 0 já mostra o texto (vira capa/miniatura); o soco parte de um estado visível */
+      fx.rays("s1-rays", 0, 16, 3.5, 40);
+      tl.fromTo("#s1-kt .w", { scale: 1.35 }, { scale: 1, duration: 0.3, ease: "power4.out", stagger: 0.08 }, 0);
       fx.shake("#s1", 0.6, 22);
 
       /* Transição fluida → solução */
@@ -107,7 +108,7 @@
       fx.popIn("#s2-pop", 5.4, { x: -150 });
       fx.count(document.getElementById("s2-val"), 0, 6600, 5.5, 1.0);
       fx.checkIn("#s2-pop .check", 6.4);
-      fx.confetti("s2-conf", 6.5, 320, 1250, 46, 1000);
+      fx.confetti("s2-conf", 6.5, 330, 1060, 46, 1000);
 
       /* CTA */
       fx.circleIn("#se", 8.2);
