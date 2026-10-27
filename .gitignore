@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.mp3
+*.wav
+*.mp4
+*.png
+*.jpg
+snapshots/
+renders/
+node_modules/
+*-workspace/
